@@ -7,7 +7,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: 'POST',
-            dataType: 'AJAX',
+            dataType: 'JSON',
             assync: true,
             data: data,
             url: '../model/function.php',
