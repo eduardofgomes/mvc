@@ -3,18 +3,20 @@ $(document).ready(function(){
     $('.btn-sent').click(function(e){
         e.preventDefault();
 
-        let date = $('#form').serialize();
+        let data = $('#form').serialize();
 
-        console.log(date);
+        $.ajax({
+            type: 'POST',
+            dataType: 'AJAX',
+            assync: true,
+            data: data,
+            url: '../model/function.php',
+            success: function(){
+
+            }
+        })
     });
 
 
 
 });
-
-/*
-var form = document.getElementById('form');
-var date = new FormData(form);
-
-console.log(date);
-*/
