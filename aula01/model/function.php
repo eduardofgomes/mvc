@@ -1,7 +1,7 @@
 <?php
 
-$NAME = $_REQUEST['name'];
-$ANIMAL = $_REQUEST['animal'];
+$NAME = $_REQUEST['NAME'];
+$ANIMAL = $_REQUEST['ANIMAL'];
 
 if(empty($NAME)){
     $data = array(
