@@ -1,31 +1,28 @@
 <?php
 
 $NAME = $_REQUEST['NAME'];
-$ANIMAL = $_REQUEST['ANIMAL'];
+$NASC = $_REQUEST['IDADE'];
+$BEBIDA = $_REQUEST['BEBIDA'];
+$hoje = date("Y-m-d");
+$IDADE = date_diff(date_create($NASC), date_create($hoje));
 
 if(empty($NAME)){
     $data = array(
         "type" => 'error',
-        "message" => 'There are empty fields.'
+        "message" => 'Há algum campo vazio'
     );
 }else{
 
-    switch($ANIMAL){
-        case '1': $data = array(
-            "type" => 'dog.png',
-            "message" => 'You are welcome, '.$NAME.', we know that your favorite animal is the dog'
+    if($IDADE->format('%y') >= 18){
+        $data = array(
+            "type" => 'cachaca.jpg',
+            "message" => "Olá $NAME, você é maior de idade e pode consumir bebida alcoólica, e sua preferida é $BEBIDA!"
         );
-        break;
-        case '2': $data = array(
-            "type" => 'cat.jpg',
-            "message" => 'You are welcome, '.$NAME.', we know that your favorite animal is the cat'
+    } else {
+        $data = array(
+            "type" => 'proibida.jpg',
+            "message" => "Olá $NAME, você é menor de idade e não está autorizado a consumir bebida alcoólica!"
         );
-        break;
-        case '3': $data = array(
-            "type" => 'fish.jpg',
-            "message" => 'You are welcome, '.$NAME.', we know that your favorite animal is the fish'
-        );
-        break;
     }
 }
 

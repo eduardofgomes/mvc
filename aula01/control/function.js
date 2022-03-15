@@ -15,7 +15,7 @@ $(document).ready(function(){
             success: function(dados){
                 $('#retorno').append(`
                     <div class="col-12 col-sm-8 col-md-6">
-                        <div class="alert-primary">
+                        <div class="alert">
                             <h1 class="text-center text-dark">
                                 ${dados.message}
                             </h1>
